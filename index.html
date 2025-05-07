@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - GamesWiki</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="shortcut icon" href="./assets/GamesWikiLogo.png" type="image/x-icon">
+</head>
+<body>
+    <div class="containerLogin">
+        <img src="../assets/GamesWikiLogo.png" class="wikiLogo" alt="">
+        <h1 class="title">Cadastre sua conta</h1>
+            <div class="form">
+                <div class="inputContainer">
+                    <label>Nome:</label><input type="text" id="name" placeholder="Digite seu nome">
+                </div>
+                <div class="inputContainer">
+                    <label>Email:</label><input type="email"   id="email" placeholder="Digite seu email">
+                </div>
+                <div class="inputContainer">
+                    <div class="modalPasswordSize">
+                        <blockquote>
+                            Coloque caracteres especiais para deixar sua senha mais forte!
+                        </blockquote>
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2929 4.29289C12.6834 3.90237 13.3166 3.90237 13.7071 4.29289L20.7071 11.2929C21.0976 11.6834 21.0976 12.3166 20.7071 12.7071L13.7071 19.7071C13.3166 20.0976 12.6834 20.0976 12.2929 19.7071C11.9024 19.3166 11.9024 18.6834 12.2929 18.2929L17.5858 13H4C3.44772 13 3 12.5523 3 12C3 11.4477 3.44772 11 4 11H17.5858L12.2929 5.70711C11.9024 5.31658 11.9024 4.68342 12.2929 4.29289Z" fill="#000000"></path> </g></svg>
+                    </div>
+                    <label>Senha:</label><input type="password" id="password"  placeholder="Digite sua senha" onkeyup="passwordSize()">
+                    <blockquote class="passwordSize" id="passwordSize"></blockquote>
+                </div>
+                <p class="aviso"></p>
+                <button id="" class="button-singUp" onclick="singUp()">Cadastro</button>
+                <a href="../login page/index.html" class="link">Já tem conta?, faça o Login!</a>
+            </div>
+    </div>
+</body>
+<script src="./script.js"></script>
+</html>

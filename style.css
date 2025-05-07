@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cal+Sans&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Press+Start+2P&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tiny5&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.cal-sans-regular {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+html {
+    /* background-image: url(./assets/Fotografia-de-paisagem-7-erros-mais-comuns-9.jpg); */
+    /* background-size: cover; */
+
+    background-color: #191919;
+    opacity: 1;
+    background-image:  radial-gradient(#9700cf 1px, transparent 1px), radial-gradient(#9700cf 1px, #191919 1px);
+    background-size: 40px 40px;
+    background-position: 0 0,20px 20px;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+}
+
+.containerLogin {
+    min-height: 300px;
+    background-color: rgb(28, 0, 66);
+    border-radius: 25px;
+
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    
+    align-items: center;
+    justify-content: space-around;
+
+    box-shadow: 0px 5px 10px black;
+
+    transition: ease-in-out 500ms;
+}
+
+.containerLogin:hover {
+    transform: translateY(-5px);
+}
+
+.wikiLogo {
+    max-height: 150px;
+    filter: drop-shadow(0px 5px 50px rgb(170, 0, 255));
+    transition: ease-in-out 500ms;
+}
+
+.title {
+    margin-bottom: 15px;
+}
+
+.inputContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.inputContainer:nth-child(3) {
+    position: relative;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.containerLogin h1 {
+    color: white;
+    font-family: "Cal Sans", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+
+    text-align: center;
+}
+
+.form label {
+    color: white;
+    font-weight: 500;
+    font-family: "Cal Sans", sans-serif;
+    font-style: normal;
+
+    font-size: 25px;
+}
+
+.form .inputContainer input {
+    border-radius: 25px;
+    border: none;
+    padding: 10px;
+
+    outline: none;
+
+    box-shadow: 0px 0px 10px white;
+
+    font-size: 15px;
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 400;
+}
+
+.modalPasswordSize {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    opacity: 0;
+    position: absolute;
+    max-width: 150px;
+    padding: 5px;
+    background-color: rgb(188, 124, 4);
+    border-radius: 10px;
+
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    font-family: "Cal Sans", sans-serif;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.439);
+
+    font-size: 15px;
+    transition: ease-in-out 500ms;
+}
+
+.modalPasswordSize svg g path {
+    width: 22px;
+    height: 22px;
+}
+
+#password {
+    box-shadow: 0px 0px 10px white;
+    transition: all 500ms;
+}
+
+.green {
+  box-shadow: 0px 0px 15px rgba(38, 237, 88, 1 ) !important;
+}
+
+.red {
+    box-shadow: 0px 0px 15px rgba(209, 71, 71, 1) !important;
+}
+
+.passwordSize {
+    width: 100%;
+    text-align: left;
+    color: white;
+
+    font-size: 15px;
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 400;
+}
+
+.input-container {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.aviso {
+    font-size: 15px;
+    font-family: "Cal Sans", sans-serif;
+}
+
+.button-singUp {
+    width: 100px;
+    height: 30px;
+    padding: 20px;
+
+    border-radius: 20px;
+    border: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: medium;
+    font-family: "Cal Sans";
+
+    cursor: pointer;
+
+    transition: all 500ms;
+}
+
+.button-singUp:hover {
+    background-color: rgb(89, 191, 255);
+    box-shadow: 0px 0px 10px rgb(89, 191, 255);
+    color: white;
+}
+
+.link {
+    color: rgb(177, 177, 177);
+    font-weight: 100;
+    font-family: "Cal Sans";
+    font-size: small;
+}
+
+/* Responsivity Global */
+
+@media screen and (min-width: 601px) {
+
+    .containerLogin {
+        min-width: 400px;
+    }
+
+    .form .inputContainer input {
+        min-width: 350px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .containerLogin {
+        width: 90%;
+        margin: 10px;
+        padding: 20px 10px;
+    }
+
+    .form {
+        width: 90%;
+    }
+
+    .form .inputContainer input {
+       width: calc(100%);
+    }
+}
+
+/* Modal responsive */
+
+@media screen and (min-width: 690px) {
+
+    .modalPasswordSize {
+        left: -160px;
+        bottom: -20px;
+        flex-direction: row;
+    }
+}
+
+@media screen and (max-width: 689px) {
+
+    .modalPasswordSize {
+        position: absolute;
+        bottom: -220px;
+        flex-direction: column;
+    }
+
+    .modalPasswordSize svg {
+        display: none;
+    }
+
+    .modalPasswordSize svg {
+        width: 22px;
+        height: 22px;
+    }
+}

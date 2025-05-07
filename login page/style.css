@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cal+Sans&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Press+Start+2P&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tiny5&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.cal-sans-regular {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+html {
+    /* background-image: url(./assets/Fotografia-de-paisagem-7-erros-mais-comuns-9.jpg); */
+    /* background-size: cover; */
+
+    opacity: 1;
+    background-color: #191919;
+    background-image:  radial-gradient(#9700cf 1px, transparent 1px), radial-gradient(#9700cf 1px, #191919 1px);
+    background-size: 40px 40px;
+    background-position: 0 0,20px 20px;
+
+    /* background-image: url(https://cdn.wallpaperhub.app/cloudcache/b/d/7/6/4/b/bd764bb25d49a05105060185774ba14cd2c846f7.jpg);
+    background-size: cover; */
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerLogin {
+    min-height: 300px;
+    background-color: rgba(28, 0, 66, 1);
+    border-radius: 25px;
+
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    
+    align-items: center;
+    justify-content: space-around;
+
+    box-shadow: 0px 5px 10px black;
+
+    transition: ease-in-out 500ms;
+}
+
+.containerLogin:hover {
+    transform: translateY(-5px);
+}
+
+.wikiLogo {
+    max-height: 150px;
+    filter: drop-shadow(0px 5px 50px rgb(170, 0, 255));
+    transition: ease-in-out 500ms;
+}
+
+.title {
+    margin-bottom: 15px;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.containerLogin h1 {
+    color: white;
+    font-family: "Cal Sans", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+
+    text-align: center;
+}
+
+.form label {
+    color: white;
+    font-weight: 500;
+    font-family: "Cal Sans", sans-serif;
+    font-style: normal;
+
+    font-size: 25px;
+}
+
+.form input {
+    border-radius: 25px;
+    border: none;
+    padding: 10px;
+
+    outline: none;
+
+    box-shadow: 0px 0px 10px white;
+
+    font-size: 15px;
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 400;
+}
+
+.form input:nth-child(1){
+    transition: all 500ms;
+}
+
+.input-container {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.aviso {
+    font-size: 15px;
+    font-family: "Cal Sans", sans-serif;
+    transition: all 500ms;
+}
+
+.button-login {
+    width: 100px;
+    height: 30px;
+    padding: 20px;
+
+    border-radius: 20px;
+    border: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: medium;
+    font-family: "Cal Sans";
+
+    cursor: pointer;
+
+    transition: all 500ms;
+}
+
+.button-login:hover {
+    background-color: green;
+    box-shadow: 0px 0px 10px green;
+    color: white;
+}
+
+.link {
+    color: rgb(177, 177, 177);
+    font-weight: 100;
+    font-family: "Cal Sans";
+    font-size: small;
+}
+
+@media screen and (min-width: 601px) {
+    .containerLogin {
+        min-width: 400px;
+    }
+
+    .form input {
+        min-width: 350px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .containerLogin {
+        width: 90%;
+        margin: 10px;
+        padding: 20px 10px;
+    }
+
+    .form {
+        width: 90%;
+    }
+
+    .form input {
+       width: calc(100% - 25px);
+    }
+
+    .inputContainer {
+        width: 100%;
+    }
+}
+
+.green {
+    box-shadow: 0px 0px 15px rgba(38, 237, 88, 1 ) !important;
+  }
+  
+  .red {
+      box-shadow: 0px 0px 15px rgba(209, 71, 71, 1) !important;
+  }
