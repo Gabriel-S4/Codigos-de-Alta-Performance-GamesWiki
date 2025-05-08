@@ -115,6 +115,32 @@ body {
     font-weight: 400;
 }
 
+.passwordBox {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#btnpasswordShowHidden {
+    width: 30px;
+    height: 30px;
+    right: 10px;
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.passwordShowHidden {
+    width: 30px;
+    height: 30px;
+}
+
+#buttonShowPassword {
+    display: none;
+}
+
 .modalPasswordSize {
     display: flex;
     justify-content: center;

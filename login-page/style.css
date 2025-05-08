@@ -98,7 +98,7 @@ body {
     font-size: 25px;
 }
 
-.form input {
+.form .inputContainer input {
     border-radius: 25px;
     border: none;
     padding: 10px;
@@ -110,6 +110,32 @@ body {
     font-size: 15px;
     font-family: "Cal Sans", sans-serif;
     font-weight: 400;
+}
+
+.passwordBox {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#btnpasswordShowHidden {
+    width: 30px;
+    height: 30px;
+    right: 10px;
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.passwordShowHidden {
+    width: 30px;
+    height: 30px;
+}
+
+#buttonShowPassword {
+    display: none;
 }
 
 .form input:nth-child(1){

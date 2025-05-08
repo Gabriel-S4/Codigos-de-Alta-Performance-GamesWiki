@@ -121,3 +121,18 @@ function singIn(){
         aviso.innerHTML = "Preencha os campos corretamente!"
     }
 }
+
+function passwordShowHidden(){
+    let passwordInput = document.getElementById("password")
+    let hiddenPasswordLogo = document.getElementById("buttonHiddenPassword")
+    let showPasswordLogo = document.getElementById("buttonShowPassword")
+    if(passwordInput.type == "password"){
+        passwordInput.type = "text"
+        hiddenPasswordLogo.style.display = "none"
+        showPasswordLogo.style.display = "flex"
+    } else {
+        passwordInput.type = "password"
+        hiddenPasswordLogo.style.display = "flex"
+        showPasswordLogo.style.display = "none"
+    }
+}
