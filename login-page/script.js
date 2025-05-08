@@ -1,5 +1,7 @@
 // Limpa o usuário que está logado
 localStorage.setItem("userActive","")
+localStorage.setItem("emailActive","")
+
 // Cria um array de objetos para diversos usuarios
 let usuarios = []
 // Pergunta se existe algum local storage chamado 'usuarios'
@@ -9,10 +11,12 @@ if(localStorage.getItem("usuarios")){
 }
 
 let userActive
+let emailActive
 // Caso a página seja recarregada, ele pega novamente o dado do userActive se ele existir
 if(localStorage.getItem("userActive")){
     // Havendo, converte o que tiver por lá para objeto e guarda na variável usuarios
      userActive = localStorage.getItem("userActive")
+     emailActive = localStorage.getItem("emailActive")
 }
 
 // Função de login acionado caso o botão de login seja clicado
@@ -76,11 +80,13 @@ function singIn(){
              // Verifica qual o usuário que está ativo no momento e guarda o nome dele
              usuarios.filter((e) => {
                  if(e.email == guardaEmail && e.senha == guardaSenha){
-                     userActive = e.nome
+                     userActive = e.nome;
+                     emailActive = e.email
                  }
              })
              // Guarda o nome do usuário que está logado
              localStorage.setItem("userActive",userActive)
+             localStorage.setItem("emailActive",emailActive)
              // Envia para a página de lista onde estará a api após 2 segundos
              setInterval(function() {
                 location.href = "./projeto%20-%20codigo/crud/lista/lista.html";

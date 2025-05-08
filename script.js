@@ -1,5 +1,6 @@
 // Limpa o usuário que está logado
 localStorage.setItem("userActive","")
+localStorage.setItem("emailActive","")
 
 // Cria um array de objetos para diversos usuarios
 let usuarios = []
