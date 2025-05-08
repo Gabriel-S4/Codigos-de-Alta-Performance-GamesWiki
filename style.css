@@ -200,6 +200,7 @@ body {
 .aviso {
     font-size: 15px;
     font-family: "Cal Sans", sans-serif;
+    transition: all 500ms;
 }
 
 .button-singUp {
