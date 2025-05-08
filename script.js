@@ -40,7 +40,7 @@ function singUp(){
                 aviso.innerHTML = "Cadastrado"
                 usuarios.push(usuario)
                 setInterval(function() {
-                    location.href = "/login-page/index.html";
+                    location.href = "./login-page/index.html";
                   }, 2000);
                 document.getElementById("password").classList.remove("red")
             } else {
