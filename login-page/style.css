@@ -116,6 +116,8 @@ body {
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 #btnpasswordShowHidden {
@@ -214,6 +216,10 @@ body {
 
     .inputContainer {
         width: 100%;
+    }
+
+    #btnpasswordShowHidden {
+        right: 20px;
     }
 }
 
