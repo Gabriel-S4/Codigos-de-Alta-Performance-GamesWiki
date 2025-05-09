@@ -89,7 +89,7 @@ function singIn(){
              localStorage.setItem("emailActive",emailActive)
              // Envia para a página de lista onde estará a api após 2 segundos
              setInterval(function() {
-                location.href = "./home-page/index.html";
+                location.href = "../home-page/index.html";
               }, 2000);
 
         } else if(guardaEmail == "adm" && guardaSenha == "adm") {
