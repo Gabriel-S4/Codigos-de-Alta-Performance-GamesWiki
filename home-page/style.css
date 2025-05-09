@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cal+Sans&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Press+Start+2P&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tiny5&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Cal Sans", sans-serif;
+}
+
+:root {
+    min-height: 100dvh;
+    opacity: 1;
+    background-color: #191919;
+    background-image:  radial-gradient(#9700cf 1px, transparent 1px), radial-gradient(#9700cf 1px, #191919 1px);
+    background-size: 40px 40px;
+    background-position: 0 0,20px 20px;
+}
+
+body {
+    height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header div {
+    height: 100%;
+    background-color: transparent;
+    flex-basis: 350px 450px 350px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+}
+
+header {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    background-color: white;
+}
+
+/* Left Container */
+
+.logo-GamesWiki {
+    height: 100%;
+    filter: drop-shadow(0px 2px 1px black);
+}
+
+/* Mid Container */
+
+.mid {
+    width: 450px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Right Container */
+
+.userField{
+    padding: 25px;
+    justify-content: end;
+}
+
+#logout {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    
+    cursor: pointer;
+    transition: ease-in-out 500ms;
+}
+
+#logout:hover {
+    filter: drop-shadow(0px 0px 2px rgb(255, 0, 0));
+}
+
+.nameUser {
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+    margin: 5px;
+}
+
+/* Main */
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Main Container */
+
+.containerMain {
+    height: auto;
+    width: 700px;
+    padding: 40px;
+    margin: 20px;
+    background-color: rgba(28, 0, 66, 1);
+    box-shadow: 0px 5px 5px black;
+    border-radius: 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.containerMain h1 {
+    color: white;
+    text-shadow: 0px 3px 5px black;
+    text-align: center;
+}
+
+.search {
+    width: 100%;
+    border-radius: 25px;
+    padding: 15px;
+    border: 0px;
+    outline: none;
+    box-shadow:  0px 2px 5px black;
+}
+
+.buttonSearch {
+    width: 80px;
+    height: 30px;
+    padding: 20px;
+
+    border-radius: 20px;
+    border: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: medium;
+    font-family: "Cal Sans";
+
+    cursor: pointer;
+
+    transition: all 500ms;
+    box-shadow: 0px 2px 5px;
+    color: white;
+    background-color: purple;
+}
+
+.buttonSearch:hover {
+    color: white;
+    background-color: green;
+    box-shadow: 0px 0px 10px black;
+}
+
+@media screen and (max-width: 550px) {
+    .logo-GamesWiki {
+        display: none;
+    }
+    
+    .left {
+        display: none;
+    }
+
+    .avatarUser {
+        display: none;
+    }
+
+    .mid {
+        padding-left: 20px;
+    }
+}

@@ -52,10 +52,6 @@ body {
     transition: ease-in-out 500ms;
 }
 
-.containerLogin:hover {
-    transform: translateY(-5px);
-}
-
 .wikiLogo {
     max-height: 150px;
     filter: drop-shadow(0px 5px 50px rgb(170, 0, 255));
@@ -106,6 +102,7 @@ body {
     outline: none;
 
     box-shadow: 0px 0px 10px white;
+    background-color: white;
 
     font-size: 15px;
     font-family: "Cal Sans", sans-serif;
