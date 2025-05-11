@@ -74,7 +74,7 @@ function singIn(){
         if(filtrado.length > 0 && emailValid){
              // Se o campo está preenchido, ele procura e acha o usuário
              aviso.style.color = "rgb(106, 255, 121)"
-             aviso.innerHTML = "usuario encontrado, redirecionando..."
+             aviso.innerHTML = "Usuário encontrado, redirecionando..."
              // Remove a classe cor vermelha caso tenha tido algum erro anteriormente
              document.getElementById("email").classList.remove("red")
              // Verifica qual o usuário que está ativo no momento e guarda o nome dele
@@ -99,7 +99,7 @@ function singIn(){
                 localStorage.setItem("userActive","adm")
                 // Se o campo está preenchido, ele procura e acha o usuário
                 aviso.style.color = "rgb(106, 255, 121)"
-                aviso.innerHTML = "administrador logado, redirecionando para CRUD..."
+                aviso.innerHTML = "Administrador logado, redirecionando para CRUD..."
                 // Envia para a página do adm, onde o CRUD fica
                 setInterval(function() {
                     location.href = "./listCRUD/adm.html";
