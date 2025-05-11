@@ -118,7 +118,7 @@ function singIn(){
             // Troca a cor do campo de email para verde
             document.getElementById("email").classList.add("red")
             document.getElementById("email").classList.remove("green")
-            aviso.innerHTML = "Usuario não encontrado, tente novamente!"
+            aviso.innerHTML = "Usuário não encontrado, tente novamente!"
 
         }
     } else {
