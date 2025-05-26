@@ -45,6 +45,7 @@ function refresh() {
             <td class="linhas">${usuario.nome}</td>
             <td class="linhas">${usuario.email}</td>
             <td class="linhas">${usuario.senha}</td>
+            <td class="linhas">${new Date(usuario.nascimento).toLocaleDateString('pt-BR')}</td>
             <td class="acao">
                 <button type="button" class="botao verde" id="editar-${index}">editar</button>
                 <button type="button" class="botao vermelho" data-index="${index}" onclick="apagar(this)">excluir</button>
@@ -102,6 +103,7 @@ function pesquisa() {
                 <td class="linhas">${user.nome}</td>
                 <td class="linhas">${user.email}</td>
                 <td class="linhas">${user.senha}</td>
+                <td class="linhas">${new Date(user.nascimento).toLocaleDateString('pt-BR')}</td>
                 <td class="acao">
                     <button type="button" class="botao verde" id="editar-${user.index}">editar</button>
                     <button type="button" class="botao vermelho" data-index="${user.index}" onclick="apagar(this)">excluir</button>
@@ -144,7 +146,8 @@ const saveUser = () => {
         const user = {
             nome: document.getElementById('nome').value,
             email: document.getElementById('email').value,
-            senha: document.getElementById('senha').value
+            senha: document.getElementById('senha').value,
+            nascimento: document.getElementById('nascimento').value
         }
         const index = document.getElementById('nome').dataset.index
 
@@ -162,6 +165,7 @@ const preencherCampos = (usuario) => {
     document.getElementById('nome').value = usuario.nome
     document.getElementById('email').value = usuario.email
     document.getElementById('senha').value = usuario.senha
+    document.getElementById('nascimento').value = usuario.nascimento
     document.getElementById('nome').dataset.index = usuario.index
 }
 
@@ -172,7 +176,7 @@ const editUser = (index) => {
     abrirModal()
 }
 
-const editDelete = (evento) => {
+const editClick = (evento) => {
     if (evento.target.type === 'button') {
         const [acao, index] = evento.target.id.split('-')
 
@@ -187,4 +191,4 @@ document.getElementById('cadastrarUsuario').addEventListener('click', abrirModal
 document.getElementById('fecharModal').addEventListener('click', fecharModal)
 document.getElementById('salvar').addEventListener('click', saveUser)
 document.getElementById('limpar').addEventListener('click', limparCampos)
-document.querySelector('#usertable').addEventListener('click', editDelete)
+document.querySelector('#usertable').addEventListener('click', editClick)
