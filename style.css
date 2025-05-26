@@ -237,6 +237,10 @@ body {
     font-size: small;
 }
 
+.inputDate{
+    color: #444;
+}
+
 /* Responsivity Global */
 
 @media screen and (min-width: 601px) {

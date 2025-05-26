@@ -97,12 +97,13 @@ function singIn(){
                 document.getElementById("email").classList.remove("red")
                 // Após o adm logar, guarda os dados do adm no usuário ativo
                 localStorage.setItem("userActive","adm")
+                localStorage.setItem("emailActive","adm")
                 // Se o campo está preenchido, ele procura e acha o usuário
                 aviso.style.color = "rgb(106, 255, 121)"
                 aviso.innerHTML = "Administrador logado, redirecionando para CRUD..."
                 // Envia para a página do adm, onde o CRUD fica
                 setInterval(function() {
-                    location.href = "./listCRUD/adm.html";
+                    location.href = "../CrudJS/lista.html";
                 }, 2000);
 
         } else if( emailValid == false){

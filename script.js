@@ -14,12 +14,14 @@ if(localStorage.getItem("usuarios")){
 function singUp(){
     // Captura o valor dos campos de input
     let guardaNome = document.querySelector('#name').value
+    let guardaNasc = document.querySelector('#DateNasc').value
     let guardaEmail = document.querySelector('#email').value
     let guardaSenha = document.querySelector('#password').value
     let aviso = document.querySelector(".aviso")
     // Objeto chamado usuário onde armazenará as informações
     var usuario = {
         nome: guardaNome,
+        dataNasc: guardaNasc,
         email: guardaEmail,
         senha: guardaSenha
     }
@@ -33,7 +35,7 @@ function singUp(){
     let emailValid = guardaEmail.indexOf("@gmail.com") > 1 || guardaEmail.indexOf("@hotmail.com") > 1 || guardaEmail.indexOf("@outlook.com") > 1 ? true : false
     if(existe == false) {
         // Verifica se o campo de nome,email ou senha está vazio, se não conclui a lógica
-        if(usuario.nome != "" && usuario.email != "" && usuario.senha != ""){
+        if(usuario.nome != "" && usuario.dataNasc != "" && usuario.email != "" && usuario.senha != ""){
             // Verifica se o gmail,hotmail e outlook existe e conclui a lógica
             if(emailValid){
                 // Se estiver correto, ele altera a cor dos campos, adiciona o usuario ao array usuarios e envia para a página do login
@@ -55,7 +57,7 @@ function singUp(){
 
     }else {
         // Verifica se o campo de nome,email ou senha está vazio, se não conclui a lógica
-        if(usuario.nome != "" && usuario.email != "" && usuario.senha != ""){
+        if(usuario.nome != "" && usuario.dataNasc != "" && usuario.email != "" && usuario.senha != ""){
             // alert("O usuário já existe, tente outro email")
             aviso.innerHTML = "Usuário já existe"
             aviso.style.color = "rgb(255, 106, 106)"

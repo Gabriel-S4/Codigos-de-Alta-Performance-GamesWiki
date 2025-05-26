@@ -23,7 +23,7 @@
     background: radial-gradient(circle, transparent 20%, #ffffff 20%, #ffffff 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #ffffff 20%, #ffffff 80%, transparent 80%, transparent) 25px 25px, linear-gradient(#000000 2px, transparent 2px) 0 -1px, linear-gradient(90deg, #000000 2px, #ffffff 2px) -1px 0;
     background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px; */
 
-    background-image: url(../assets/wallpapersden.com_fantasy-castle-pixel-art_1920x1081.jpg);
+    background-image: url(./wallpapersden.com_fantasy-castle-pixel-art_1920x1081.jpg);
 }
 
 body {
@@ -79,26 +79,7 @@ header {
     gap: 10px;
 }
 
-.searchField {
-    width: 100%;
-    position: relative;
-    justify-content: center;
-    display: flex;
-}
-
-.search {
-    width: 100%;
-    border-radius: 25px;
-    padding: 15px;
-    border: 0px;
-    outline: none;
-    box-shadow:  0px 2px 5px black;
-
-    font-size: 18px;
-    z-index: 5;
-}
-
-.buttonSearch {
+.buttonBack {
     width: 100px;
     height: 40px;
     padding: 20px;
@@ -117,8 +98,8 @@ header {
 
     transition: all 500ms;
     box-shadow: 0px 2px 5px black;
-    color: white;
-    background-color: purple;
+    color: black;
+    background-color: rgb(255, 255, 255);
 }
 
 .buttonSearch:hover {
@@ -137,10 +118,6 @@ header {
 .userField{
     padding: 25px;
     justify-content: end;
-}
-
-.userField a {
-    align-items: center;
 }
 
 .nameUser {
@@ -197,11 +174,6 @@ main {
     text-align: center;
 }
 
-#LoadingContainer {
-    width: 100%;
-    height: 100%;
-}
-
 #rangeSearch {
   height: 15px;
   -webkit-appearance: none;
@@ -229,7 +201,6 @@ main {
     color: #999;
     font-family: "Poppins", sans-serif;
     font-size: 1.5em;
-    text-align: center;
 }
 
 .rangeText span {
@@ -247,49 +218,6 @@ main {
     gap: 15px 15px; 
 }
 
-.card {
-    min-height: 380px;
-    max-width: 430px;
-    flex-basis: 350px;
-    background-color: rgb(16, 16, 16);
-    border-radius: 25px;
-    cursor: pointer;
-    box-shadow: 0px 0px 15px black;
-}
-
-.card img {
-    width: 100%;
-    height: 100%;
-}
-
-.card h3 {
-    margin: 10px;
-    color: white;
-    font-weight: 400;
-}
-
-.thumbGame {
-    border-radius: 25px 25px 0px 0px;
-    height: 200px;
-    overflow: hidden;
-}
-
-.thumbGame img {
-    transition: ease-in-out 500ms;
-}
-
-.card:hover .thumbGame img {
-    transform: scale(1.1);
-}
-
-.detailsGame {
-    margin: 10px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 2.5px;
-}
-
 .detailsGame p {
     font-weight: 400;
 }
@@ -299,10 +227,7 @@ main {
     color: gray;
 }
 
-.avatarUser {
-    width: 40px !important;
-    height: 40px !important;
-}
+
 
 /* Game Details page */
 
@@ -350,13 +275,17 @@ main {
         border-radius: 0px;
     }
 
-    .thumbGame {
-    border-radius: 25px 25px 0px 0px;
-    height: 190px;
-    overflow: hidden;
 }
+
+.gameWallpaperContainer {
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
 
 .gameWallpaper {
     width: 100%;
+    height: 100%;
 }

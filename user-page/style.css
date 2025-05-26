@@ -23,7 +23,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 }
 .containerHeader .card{
@@ -42,6 +42,7 @@ body{
     padding: 35px 0px 15px 0px;
     font-family: "Cal Sans", sans-serif;
     font-weight: 500;
+    text-align: center;
 } 
 
 .containerMain{
@@ -66,14 +67,13 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: auto;
-    
+    margin: 0px;
+    width: 100%;
 }
 
 .campos{
     border-radius: 25px;
     border: none;
-    padding: 6px 20px;
     background: #ffffff;
     outline: none;
     box-shadow: 0px 0px 5px white;
@@ -82,8 +82,8 @@ body{
     font-family: "Cal Sans", sans-serif;
     font-weight: 400;
     transition: 0.3s ease;
-    width: 300px;
-    
+    width: 100%;
+    padding: 10px;
 }
 
 .Button{
@@ -120,15 +120,17 @@ body{
 .nomeContainer{
     display: flex;
     align-items: center;
+    width: 80%;
 }
 .emailContainer {
     display: flex;
     align-items: center;
-    
+    width: 80%;
 }
 .senhaContainer{
     display: flex;
     align-items: center;
+    width: 80%;
 }
 .btnContainer{
     display: flex;
@@ -182,7 +184,7 @@ button:hover{
 }
 @media screen and (min-width: 601px){
     .card{
-        width: 500px;
+        min-width: 400px;
     }
 }
 

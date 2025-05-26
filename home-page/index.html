@@ -5,22 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home - GamesWiki</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="loading.css">
+    <link rel="shortcut icon" href="../assets/GamesWikiLogo.png" type="image/x-icon">
 </head>
 <body>
     <header>
         <div class="left">
-            <img class="logo-GamesWiki" src="../assets/GamesWikiLogo.png" alt="">
+            <a href="../home-page/index.html">
+                <img class="logo-GamesWiki" src="../assets/GamesWikiLogo.png" alt="">
+            </a>
         </div>
         <div class="mid">
-               <input class="search" type="text" id="gameName" placeholder="Digite o nome do jogo">
-               <button class="buttonSearch" onclick="buscarJogo()">Buscar</button>      
+            <div class="searchField">
+               <input class="search" type="text" id="gameName" placeholder="Digite o nome do jogo" onkeyup="elabledDisabledButtonSearch()">
+            </div>
+               <button class="buttonSearch" onclick="buscarJogo()" disabled>Buscar</button>   
         </div>
         <div class="right">
             <div class="userField">
-                <h3 id="nameUser" class="nameUser"></h3>
-                <svg class="avatarUser" style="width: 40px; height: 40px; border-radius: 25px; border: 2px solid black; padding: 5px; filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.5));" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8 7C9.65685 7 11 5.65685 11 4C11 2.34315 9.65685 1 8 1C6.34315 1 5 2.34315 5 4C5 5.65685 6.34315 7 8 7Z" fill="#000000"></path> <path d="M14 12C14 10.3431 12.6569 9 11 9H5C3.34315 9 2 10.3431 2 12V15H14V12Z" fill="#000000"></path> </g></svg>
+                <a href="../user-page/index.html" style="display: flex; gap: 10px;">
+                    <h3 id="nameUser" class="nameUser" style="text-align: center;"></h3>
+                    <svg class="avatarUser" style="width: 40px; height: 40px; border-radius: 25px; border: 2px solid rgb(255, 255, 255); padding: 5px; filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.5));" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8 7C9.65685 7 11 5.65685 11 4C11 2.34315 9.65685 1 8 1C6.34315 1 5 2.34315 5 4C5 5.65685 6.34315 7 8 7Z" fill="#FFFFFF"></path> <path d="M14 12C14 10.3431 12.6569 9 11 9H5C3.34315 9 2 10.3431 2 12V15H14V12Z" fill="#FFFFFF"></path> </g></svg>
+                </a>
                 <button id="logout" onclick="quit()">
-                    <svg style=" filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.5));" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M15 4H18C19.1046 4 20 4.89543 20 6V18C20 19.1046 19.1046 20 18 20H15M8 8L4 12M4 12L8 16M4 12L16 12" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    <svg style="filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.5));" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M15 4H18C19.1046 4 20 4.89543 20 6V18C20 19.1046 19.1046 20 18 20H15M8 8L4 12M4 12L8 16M4 12L16 12" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                 </button>
             </div>
         </div>
@@ -28,8 +36,11 @@
     <main>
         <div class="containerMain">
             <h1>Jogos</h1>
-            <div class="containerResults">
+            <input id="rangeSearch" type="range" value="30" min="1" max="30" oninput="rangeSearch()">
+            <h3 class="rangeText" id="rangeText"><span>Limite de Resultados: </span>30</h3>
 
+            <div class="containerResults">
+                    <h3 style="color:red; font-weight: 300; font-size: 1rem;">Nenhum Jogo Encontrado</h3>
             </div>
         </div>
     </main>

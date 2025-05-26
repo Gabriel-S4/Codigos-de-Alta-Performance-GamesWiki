@@ -1,3 +1,4 @@
+
 // Cria um array de objetos para diversos usuarios
 let usuarios = []
 // Pergunta se existe algum local storage chamado 'usuarios'
@@ -29,31 +30,77 @@ function quit(){
     localStorage.setItem("emailActive","")
 }
 
+var screenshots
+// Coloque seu token
+var token = "c545dad4f1c446e2b13baea1fc7cc210"
+let searchInput = document.getElementById("gameName")
+
+function elabledDisabledButtonSearch(){
+    if(searchInput.value < 1){
+    document.querySelector(".buttonSearch").disabled = true
+} else {
+    document.querySelector(".buttonSearch").disabled = false
+}
+}
+
 async function buscarJogo() {
     const gameName = document.getElementById('gameName').value;
-    const token = '72f3de2b2c9f4d069b048da5f14e13f9';
-    const url = `https://api.rawg.io/api/games?key=${token}&search=${encodeURIComponent(gameName)}&page_size=1`;
-  
+    let range = document.getElementById("rangeSearch").value;
+    const url = `https://api.rawg.io/api/games?key=${token}&search=${encodeURIComponent(gameName)}&page_size=${range}`;
+    document.querySelector(".containerResults").innerHTML = `
+    <div id="LoadingContainer">
+        <div class="holder">
+            <div class="preloader">
+                    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+        </div>
+    </div>
+    `
     try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error("Erro na requisição: " + response.statusText);
-      }
-  
-      const data = await response.json();
-  
-      if (data.results.length === 0) {
-        console.log("Nenhum jogo encontrado.");
-      } else {
-        const jogo = data.results[0];
-        console.log("Nome:", jogo.name);
-        console.log("Lançamento:", jogo.released);
-        console.log("Rating:", jogo.rating);
-        console.log("Imagem:", jogo.background_image);
-        console.log("Plataformas:", jogo.platforms.map(p => p.platform.name).join(", "));
-      }
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error("Erro na requisição: " + response.statusText);
+        }
+
+        const data = await response.json();
+
+        if (data.results.length === 0) {
+            console.log("Nenhum jogo encontrado.");
+        } else {
+            data.results.forEach(jogo => {
+            //   if(jogo.rating > 0){
+                document.getElementById("LoadingContainer").innerHTML = ""
+                document.querySelector(".containerResults").innerHTML += `
+                <div class="card" onclick="gameDetail(${jogo.id})">
+                <div class="thumbGame">
+                    <img src="${jogo.background_image}">
+                </div>
+                <h3>${jogo.name}</h3>
+                <div class="detailsGame">
+                    <p>Avaliações: <span>${jogo.ratings_count}</span></p>
+                    <p>Nota: <span>${jogo.rating} / 5</span></p>
+                    <p>Plataformas: <span>${jogo.platforms.map(p => p.platform.name).join(", ")}</span></p>
+                </div>
+                </div>
+              `
+            //   }
+              // <p>Lançamento: <span>${jogo.released}</span></p>
+              // <p>Plataformas: <span>${ jogo.platforms.map(p => p.platform.name).join(", ")}</span></p>
+                console.log(jogo)
+            });
+        }
     } catch (error) {
-      console.error("Erro ao buscar o jogo:", error);
+        console.error("Erro ao buscar o jogo:", error);
     }
-  }
-  
+}
+buscarJogo()
+
+function rangeSearch(){
+      let range = document.getElementById("rangeSearch").value
+      document.getElementById("rangeText").innerHTML = `<span>Limite de Resultados:</span> ${range}`
+}
+
+function gameDetail(id) {
+      localStorage.setItem("IdGame",id)
+      location.href = "./gameDetails/index.html"
+}
