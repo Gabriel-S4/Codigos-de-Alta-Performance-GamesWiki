@@ -73,7 +73,7 @@ header {
 /* Mid Container */
 
 .mid {
-      flex-basis: 33.33%; /* 1/3 do espaço */
+      /* flex-basis: 33.33%; 1/3 do espaço */
     width: 450px;
     display: flex;
     gap: 10px;
@@ -340,6 +340,10 @@ main {
         padding: 40px 0px;
         margin: 20px;
     }
+
+    .mid {
+        flex-basis: 33.33%;
+    }
 }
 
 @media screen and (max-width: 625px) {
@@ -355,6 +359,10 @@ main {
     height: 190px;
     overflow: hidden;
 }
+
+    .mid {
+        padding-left: 20px;
+    }
 }
 
 .gameWallpaper {
