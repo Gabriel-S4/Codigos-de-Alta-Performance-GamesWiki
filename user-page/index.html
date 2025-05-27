@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Página de Perfil</title>
+</head>
+<body>
+    <div class="containerHeader">
+        <div class="card">
+            <header>
+                <a href="../home-page/index.html" class="modal"><p>x<p></a>
+                <h1 class="cabecalho">Meu Perfil</h1>
+            </header>
+            <main>
+                <section class="containerMain">
+                    <section class="figures">
+                        <img src="./assets/UserPhoto.webp" alt="" class="PhotoUser">
+                    </section>
+
+                    <section class="ContainerGeral">
+                        <label for="nome" class="labelInputs" >Nome</label>
+                        <div class="nomeContainer">
+                                <input type="text" id="nome" class="campos" placeholder="Nome Cadastrado" value="" disabled>  
+
+                        </div>
+
+                        <label for="email" class="labelInputs">Email</label>
+                        <div class="emailContainer">
+                            <input type="email" id="email" class="campos" placeholder="Email Cadastrado" value=""  disabled> 
+                        </div>
+
+                        <label for="dataNasc" class="labelInputs">Data nascimento</label>
+                        <div class="dataNascContainer">
+                            <input type="date" id="date" class="campos" placeholder="__/__/____" value="" disabled>
+                        </div>
+
+                        <div id="EscondendoONomeSenhaDoLabel">
+                            <label for="senha" class="labelInputs">Senha</label> 
+                        </div>
+                        <div class="EditDados" id="campoSenhaHtml">
+                            <input type="password" id="senha" class="campos" placeholder="Nova senha" value=""  onkeyup="passwordSize()" > 
+                        </div>
+                    </section>
+                </section>
+            </main>
+            <footer>
+                <div class="btnContainer">
+                    <input type="button" id="BotaoSalvar" class="Button" value="Salvar" onclick="Salvar()">
+                    <input type="button" id="Btn-EditarDados" class="Button" value="Editar Dados" onclick="EditarDados()">
+                    <input type="button" id="TrocarSenha" class="Button" value="Trocar Senha" onclick="trocarSenha()">
+                </div>
+                
+
+                <div id="AlertaSALVO" class="alerta">
+                    <p>Todas Alterações foram Salvas.</p>
+                    <!-- <button onclick="fecharAlerta()">Fechar</button> -->
+                </div>
+
+                <div id="alertaFormatoEmailInc" class="alerta">
+                    <p>Email no formato Incorreto! "@xxxx.xxx".</p>
+                    <!-- <button onclick="fecharAlerta()">Fechar</button> -->
+                </div>
+
+                <div id="alertaNomeVazio" class="alerta">
+                    <p>O campo "NOME" não pode está vazio.</p>
+                    <!-- <button onclick="fecharAlerta()">Fechar</button> -->
+                </div>
+
+            </footer>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

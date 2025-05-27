@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+    font-weight: 500;
+    font-family: "Cal Sans", sans-serif;
+    font-style: normal;
+
+}   
+
+body{
+    background-color: #191919;
+    opacity: 1;
+    background-image:  radial-gradient(#9700cf 1px, transparent 1px), radial-gradient(#9700cf 1px, #191919 1px);
+    background-size: 40px 40px;
+    background-position: 0 0,20px 20px;
+}
+
+.containerHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.containerHeader .card{
+    background-color: rgb(40, 0, 89);
+    border-radius: 35px;    
+    box-shadow: 0 0 15px rgba(0,0,0,9);
+    align-items: center;
+    justify-content: center;
+    min-height: 600px;
+    padding: 0px 0px 35px 0px;
+}
+
+.cabecalho{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 0px 15px 0px;
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 500;
+} 
+
+a{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin: 20px 0px 0px 0px;
+    padding: 0px 30px 0px 0px;
+    font-weight: 500;
+    font-size: large;
+}
+.containerMain{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.containerMain .PhotoUser{
+    width: 14rem;
+    height: 8rem;
+}
+
+.figures{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 40px 15px 40px;
+}
+
+.ContainerGeral{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    
+}
+
+.campos{
+    border-radius: 25px;
+    border: none;
+    padding: 6px 20px;
+    background: #ffffff;
+    outline: none;
+    box-shadow: 0px 0px 5px white;
+    color: black;
+    font-size: 15px;
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 400;
+    transition: 0.3s ease;
+    width: 300px;
+    
+}
+
+.Button{
+    width: 125px;
+    height: 40px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: none;
+
+    font-size: medium;
+    font-family: "Cal Sans";
+    cursor: pointer;
+    color: black;
+    transition: all 500ms;
+}
+
+.Button:hover{
+    background-color: rgb(89, 191, 255);
+    box-shadow: 0px 0px 10px rgb(89, 191, 255);
+    color: white;
+    
+}
+
+.labelInputs{
+
+    color: white;
+    font-weight: 500;
+    font-family: "Cal Sans", sans-serif;
+    font-style: normal;
+    font-size: 25px;
+    padding: 4px 0px 4px 0px;
+}
+
+.nomeContainer{
+    display: flex;
+    align-items: center;
+}
+.emailContainer {
+    display: flex;
+    align-items: center;
+    
+}
+.dataNascContainer{
+    display: flex;
+    align-items: center;
+}
+.senhaContainer{
+    display: flex;
+    align-items: center;
+}
+
+.btnContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 10px;
+}
+
+.alerta {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(98, 0, 227);
+    padding: 30px 40px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    box-shadow: 0 0 10px 10px rgba(166, 0, 255, 0.7);
+    font-size: 18px;
+    color: rgb(51, 51, 51);
+    z-index: 9999;
+}
+
+/* .alerta button {
+    width: 125px;
+    height: 40px;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: none;
+    font-size: medium;
+    font-family: "Cal Sans";
+    cursor: pointer;
+    color: black;
+    transition: all 500ms;
+}
+button:hover{
+    background-color: rgb(89, 191, 255);
+    box-shadow: 0px 0px 10px rgb(89, 191, 255);
+    color: white;
+} */
+
+@media screen and (max-width: 600px){
+    .card{
+        width: 90%;
+    }
+}
+@media screen and (min-width: 601px){
+    .card{
+        width: 500px;
+    }
+}
+
+.red{
+    box-shadow: 0px 0px 15px rgba(209, 71, 71, 1);
+}
+.green{
+    box-shadow: 0px 0px 15px rgb(0, 255, 64);
+
+}
