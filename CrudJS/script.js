@@ -45,7 +45,7 @@ function refresh() {
             <td class="linhas">${usuario.nome}</td>
             <td class="linhas">${usuario.email}</td>
             <td class="linhas">${usuario.senha}</td>
-            <td class="linhas">${new Date(usuario.dataNasc).toLocaleDateString('pt-BR')}</td>
+            <td class="linhas">${formatarData(usuario.dataNasc)}</td>
             <td class="acao">
                 <button type="button" class="botao verde" id="editar-${index}">editar</button>
                 <button type="button" class="botao vermelho" data-index="${index}" onclick="apagar(this)">excluir</button>
@@ -103,7 +103,7 @@ function pesquisa() {
                 <td class="linhas">${user.nome}</td>
                 <td class="linhas">${user.email}</td>
                 <td class="linhas">${user.senha}</td>
-                <td class="linhas">${new Date(user.dataNasc).toLocaleDateString('pt-BR')}</td>
+                <td class="linhas">${formatarData(user.dataNasc)}</td>
                 <td class="acao">
                     <button type="button" class="botao verde" id="editar-${user.index}">editar</button>
                     <button type="button" class="botao vermelho" data-index="${user.index}" onclick="apagar(this)">excluir</button>
@@ -184,6 +184,14 @@ const editClick = (evento) => {
             editUser(Number(index))
         }
     }
+}
+
+function formatarData(dataOriginal){
+    if(!dataOriginal){
+        return ''
+    }
+    const [ano, mes, dia] = dataOriginal.split('-')
+    return `${dia}/${mes}/${ano}`
 }
 
 // Eventos
