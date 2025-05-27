@@ -45,7 +45,7 @@ function refresh() {
             <td class="linhas">${usuario.nome}</td>
             <td class="linhas">${usuario.email}</td>
             <td class="linhas">${usuario.senha}</td>
-            <td class="linhas">${new Date(usuario.nascimento).toLocaleDateString('pt-BR')}</td>
+            <td class="linhas">${new Date(usuario.dataNasc).toLocaleDateString('pt-BR')}</td>
             <td class="acao">
                 <button type="button" class="botao verde" id="editar-${index}">editar</button>
                 <button type="button" class="botao vermelho" data-index="${index}" onclick="apagar(this)">excluir</button>
@@ -103,7 +103,7 @@ function pesquisa() {
                 <td class="linhas">${user.nome}</td>
                 <td class="linhas">${user.email}</td>
                 <td class="linhas">${user.senha}</td>
-                <td class="linhas">${new Date(user.nascimento).toLocaleDateString('pt-BR')}</td>
+                <td class="linhas">${new Date(user.dataNasc).toLocaleDateString('pt-BR')}</td>
                 <td class="acao">
                     <button type="button" class="botao verde" id="editar-${user.index}">editar</button>
                     <button type="button" class="botao vermelho" data-index="${user.index}" onclick="apagar(this)">excluir</button>
@@ -147,7 +147,7 @@ const saveUser = () => {
             nome: document.getElementById('nome').value,
             email: document.getElementById('email').value,
             senha: document.getElementById('senha').value,
-            nascimento: document.getElementById('nascimento').value
+            dataNasc: document.getElementById('dataNasc').value
         }
         const index = document.getElementById('nome').dataset.index
 
@@ -165,7 +165,7 @@ const preencherCampos = (usuario) => {
     document.getElementById('nome').value = usuario.nome
     document.getElementById('email').value = usuario.email
     document.getElementById('senha').value = usuario.senha
-    document.getElementById('nascimento').value = usuario.nascimento
+    document.getElementById('dataNasc').value = usuario.dataNasc
     document.getElementById('nome').dataset.index = usuario.index
 }
 
