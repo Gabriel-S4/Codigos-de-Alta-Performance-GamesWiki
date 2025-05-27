@@ -23,28 +23,38 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
 }
 .containerHeader .card{
     background-color: rgb(40, 0, 89);
-    height: 600px;
     border-radius: 35px;    
     box-shadow: 0 0 15px rgba(0,0,0,9);
     align-items: center;
     justify-content: center;
+    min-height: 600px;
+    padding: 0px 0px 35px 0px;
 }
 
 .cabecalho{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 35px 0px 15px 0px;
+    padding: 0px 0px 15px 0px;
     font-family: "Cal Sans", sans-serif;
     font-weight: 500;
-    text-align: center;
 } 
 
+a{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin: 20px 0px 0px 0px;
+    padding: 0px 30px 0px 0px;
+    font-weight: 500;
+    font-size: large;
+}
 .containerMain{
     display: flex;
     flex-direction: column;
@@ -60,20 +70,21 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0px 40px 25px 40px;
+    padding: 0px 40px 15px 40px;
 }
 
 .ContainerGeral{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0px;
-    width: 100%;
+    margin: auto;
+    
 }
 
 .campos{
     border-radius: 25px;
     border: none;
+    padding: 6px 20px;
     background: #ffffff;
     outline: none;
     box-shadow: 0px 0px 5px white;
@@ -82,8 +93,8 @@ body{
     font-family: "Cal Sans", sans-serif;
     font-weight: 400;
     transition: 0.3s ease;
-    width: 100%;
-    padding: 10px;
+    width: 300px;
+    
 }
 
 .Button{
@@ -120,18 +131,21 @@ body{
 .nomeContainer{
     display: flex;
     align-items: center;
-    width: 80%;
 }
 .emailContainer {
     display: flex;
     align-items: center;
-    width: 80%;
+    
+}
+.dataNascContainer{
+    display: flex;
+    align-items: center;
 }
 .senhaContainer{
     display: flex;
     align-items: center;
-    width: 80%;
 }
+
 .btnContainer{
     display: flex;
     align-items: center;
@@ -145,14 +159,13 @@ body{
     flex-direction: column;
     align-items: center;
     position: fixed;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgb(98, 0, 227);
-    padding: 20px 30px;
+    padding: 30px 40px;
     border: 2px solid rgb(0, 0, 0);
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
     font-size: 18px;
     color: rgb(51, 51, 51);
     z-index: 9999;
@@ -184,7 +197,7 @@ button:hover{
 }
 @media screen and (min-width: 601px){
     .card{
-        min-width: 400px;
+        width: 500px;
     }
 }
 

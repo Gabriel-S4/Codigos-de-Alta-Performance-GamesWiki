@@ -81,12 +81,14 @@ function singIn(){
              usuarios.filter((e) => {
                  if(e.email == guardaEmail && e.senha == guardaSenha){
                      userActive = e.nome;
-                     emailActive = e.email
+                     emailActive = e.email;
+                     dateActive = e.dataNasc;
                  }
              })
              // Guarda o nome do usuário que está logado
              localStorage.setItem("userActive",userActive)
              localStorage.setItem("emailActive",emailActive)
+             localStorage.setItem("dateActive",dateActive)
              // Envia para a página de lista onde estará a api após 2 segundos
              setInterval(function() {
                 location.href = "../home-page/index.html";

@@ -3,6 +3,22 @@ document.getElementById("campoSenhaHtml").style.display = "none";
 document.getElementById("TrocarSenha").style.display = "none";
 document.getElementById("BotaoSalvar").style.display = "none";
 
+
+let usuarios = []
+// Pergunta se existe algum local storage chamado 'usuarios'
+if(localStorage.getItem("usuarios")){
+    // Havendo, converte o que tiver por lá para objeto e guarda na variável usuarios
+    usuarios = JSON.parse(localStorage.getItem("usuarios"))
+}
+
+// Caso a página seja recarregada, ele pega novamente o dado do userActive se ele existir
+if(localStorage.getItem("userActive")){
+    // Havendo, converte o que tiver por lá para objeto e guarda na variável usuarios
+    userActive = localStorage.getItem("userActive")
+    emailActive = localStorage.getItem("emailActive")
+}
+
+
 function Salvar() {
 
     const camponome = document.getElementById("nome");
@@ -14,6 +30,9 @@ function Salvar() {
     const camposenha = document.getElementById("senha");
     camposenha.disabled = true;
 
+    const campoData = document.getElementById("date");
+    campoData.disabled = true;
+
     document.getElementById("TrocarSenha").style.display = "none";
     document.getElementById("BotaoSalvar").style.display = "none";
     document.getElementById("Btn-EditarDados").style.display = "block";
@@ -21,6 +40,7 @@ function Salvar() {
     verificarNome()
     verificarSenha()
     verificarEmail()
+    updateData()
     variavelControle = false;
 }
 
@@ -31,12 +51,16 @@ function EditarDados(){
     const campoemail = document.getElementById("email");
     campoemail.disabled = false;
 
+    const campoData = document.getElementById("date");
+    campoData.disabled = false;
+
     document.getElementById("TrocarSenha").style.display = "block";
     document.getElementById("BotaoSalvar").style.display = "block";
     document.getElementById("Btn-EditarDados").style.display = "none";
 
     document.getElementById("email").style.transform = "scale(1.05)";
     document.getElementById("nome").style.transform = "scale(1.05)";
+    document.getElementById("date").style.transform = "scale(1.05)";
 
 }
 let variavelControle = false;
@@ -76,7 +100,9 @@ function fecharAlerta() {
     document.getElementById("alertaNomeVazio").style.display = "none"
 
     }, 2500);
-    
+    setTimeout(()=>{
+        window.location.reload()
+    },2500)
 
 }
 
@@ -89,7 +115,6 @@ function verificarNome(){
         alertaNomeVazio()
         
         document.getElementById("nome").disabled = false;
-        // MANTÉM O BOTÃO SALVAR
         document.getElementById("BotaoSalvar").style.display = "Block";
         
     }
@@ -126,10 +151,14 @@ function verificarEmail(){
     }
 }
 
+userName = localStorage.getItem("userActive")
+userEmail = localStorage.getItem("emailActive")
+userDate = localStorage.getItem("dateActive")
 
 function preencherHtml(){
-    var nome = localStorage.getItem("nome");
-    var email = localStorage.getItem("email");
+    var nome = userName 
+    var email = userEmail 
+    var date = userDate
 
     if (nome){
         document.getElementById("nome").value = nome;
@@ -137,21 +166,89 @@ function preencherHtml(){
     if (email){
         document.getElementById("email").value = email;
     }
+    if(date){
+        document.getElementById('date').value = date;
+    }
 }
 
 // LOCAL STORAGE
 
-function updateName(){
-    var nomeNovo = document.getElementById("nome").value
-    localStorage.setItem("nome", nomeNovo)
+function updateName() {
+    var nomeNovo = document.getElementById("nome").value;
+
+    // Atualiza nome do usuário ativo no localStorage
+    localStorage.setItem("userActive", nomeNovo);
+
+    // Recupera o email do usuário logado
+    var emailLogado = localStorage.getItem("emailActive");
+
+    // Recupera o array de usuários
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    // Encontra o índice do usuário com email igual ao logado
+    let index = usuarios.findIndex(i => i.email === emailLogado);
+
+    // Atualiza o nome no array e salva de volta no localStorage
+    if (index !== -1) {
+        usuarios[index].nome = nomeNovo;
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+    }
 }
-function updateEmail(){
-    var emailNovo = document.getElementById("email").value
-    localStorage.setItem("email", emailNovo)
+
+function updateEmail() {
+    var emailNovo = document.getElementById("email").value;
+
+    // Recupera o email atual do usuário logado
+    var emailLogado = localStorage.getItem("emailActive");
+
+    // Recupera o array de usuários
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    // Encontra o índice do usuário logado
+    let index = usuarios.findIndex(i => i.email === emailLogado);
+
+    // Atualiza o email no array e salva no localStorage
+    if (index !== -1) {
+        usuarios[index].email = emailNovo;
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+        localStorage.setItem("emailActive", emailNovo);
+    }
 }
+
+console.log("Usuários atualizados:", usuarios);
+
+
+function updateData(){
+    var dataNova = document.getElementById("date").value;
+
+    var emailLogado = localStorage.getItem("emailActive");
+
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+    
+    let index = usuarios.findIndex(i => i.email === emailLogado);
+
+    if (index !== -1) {
+        usuarios[index].dataNasc = dataNova;
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+        localStorage.setItem("dateActive", dataNova);
+    }
+}
+
 function updateSenha(){
-    var senhaNova = document.getElementById("senha").value
-    localStorage.setItem("senha", senhaNova)
+    var senhaNova = document.getElementById("senha").value;
+    
+    var emailLogado = localStorage.getItem("emailActive");
+    
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+    
+    let index = usuarios.findIndex(i => i.email === emailLogado);
+    
+    if (index !== -1) {
+        usuarios[index].senha = senhaNova;
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+        
+    }
+    
 }
 
 
@@ -174,13 +271,7 @@ function passwordSize(){
     }
 }
 
-// localStorage.setItem("nome","LUIZ GONZAGA")
-// localStorage.setItem("email","LUIZG@gmail.com")
-// localStorage.setItem("senha","Incorreta")
-
-
-console.log(localStorage.getItem("nome"))
-console.log(localStorage.getItem("email"))
-console.log(localStorage.getItem("senha"))
+console.log(localStorage.getItem("userActive"))
+console.log(localStorage.getItem("emailActive"))
 
 preencherHtml()
