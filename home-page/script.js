@@ -43,6 +43,15 @@ function elabledDisabledButtonSearch(){
 }
 }
 
+function redirectJogos() {
+  const searchName = document.getElementById("gameName").value.trim();
+  if (searchName) {
+    sessionStorage.setItem("searchName", searchName);
+    document.getElementById("gameName").value = "";
+    window.location.href = "../search-page/index.html";
+  }
+}
+
 async function buscarJogo() {
     const gameName = document.getElementById('gameName').value;
     let range = document.getElementById("rangeSearch").value;
