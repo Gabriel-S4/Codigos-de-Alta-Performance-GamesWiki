@@ -54,8 +54,7 @@ function redirectJogos() {
 
 async function buscarJogo() {
     const gameName = document.getElementById('gameName').value;
-    let range = document.getElementById("rangeSearch").value;
-    const url = `https://api.rawg.io/api/games?key=${token}&search=${encodeURIComponent(gameName)}&page_size=${range}`;
+    const url = `https://api.rawg.io/api/games?key=${token}&search=${encodeURIComponent(gameName)}`;
     document.querySelector(".containerResults").innerHTML = `
     <div id="LoadingContainer">
         <div class="holder">
@@ -103,11 +102,6 @@ async function buscarJogo() {
     }
 }
 buscarJogo()
-
-function rangeSearch(){
-      let range = document.getElementById("rangeSearch").value
-      document.getElementById("rangeText").innerHTML = `<span>Limite de Resultados:</span> ${range}`
-}
 
 function gameDetail(id) {
       localStorage.setItem("IdGame",id)
