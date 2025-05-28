@@ -329,7 +329,7 @@ main {
 
     .userField {
         width: 100%;
-        justify-content: space-around;
+        justify-content: space-between;
         padding: 10px;
     }
 
