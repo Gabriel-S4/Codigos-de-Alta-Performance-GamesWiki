@@ -259,17 +259,7 @@ main.search-results {
   opacity: 0.8;
 }
 
-@media (max-width: 600px) {
-  .game-card {
-    width: 100%;
-    max-width: 90%;
-  }
-
-  .game-grid {
-    gap: 10px;
-  }
-}
-
+/* Responsivity */
 
 @media screen and (max-width: 550px) {
     .logo-GamesWiki {
@@ -285,7 +275,74 @@ main.search-results {
     }
 
     .mid {
-        padding-left: 20px;
+        align-items: center;
+        width: 100%;
     }
+
+    .userField {
+        width: 100%;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 15px;
+        height: auto;
+
+        justify-content: center;
+        align-content: center;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+}
+
+@media screen and (max-width: 1000px) {
+}
+
+@media screen and (min-width: 626px) {
+    .containerMain {
+        height: auto;
+        width: 81.5%;
+        min-height: 100%;
+        padding: 40px 0px;
+        margin: 20px;
+    }
+
+    .mid {
+        flex-basis: 33.33%;
+    }
+}
+
+@media screen and (max-width: 625px) {
+    .containerMain {
+        width: 100%;
+        padding: 15px;
+        margin: 0px;
+        border-radius: 0px;
+    }
+
+    .thumbGame {
+    border-radius: 25px 25px 0px 0px;
+    height: 190px;
+    overflow: hidden;
+}
+}
+
+.gameWallpaper {
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+  .game-card {
+    width: 100%;
+    max-width: 90%;
+  }
+
+  .game-grid {
+    gap: 10px;
+  }
 }
 
