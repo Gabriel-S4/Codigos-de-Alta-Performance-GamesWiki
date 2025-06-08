@@ -1,4 +1,3 @@
-// Função para checar e retornar o localStorage
 const getLocalStorage = () => {
     const resultado = localStorage.getItem('usuarios');
     if (resultado !== null && resultado !== undefined) {
@@ -8,7 +7,6 @@ const getLocalStorage = () => {
     }
 }
 
-// Função para salvar no localStorage
 const setLocalStorage = (usuarios) => localStorage.setItem('usuarios', JSON.stringify(usuarios))
 
 // CRUD
